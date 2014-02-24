@@ -1,9 +1,9 @@
-public class PageView {
+public class Instance {
 	
 	private int label;
 	private int[] features;
 
-	public PageView(int label, int[] features) {
+	public Instance(int label, int[] features) {
 		this.label = label;
 		this.features = features;
 	}
