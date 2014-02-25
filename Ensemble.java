@@ -31,7 +31,6 @@ public class Ensemble {
 			int label = bag.classify(instance);
 			if (label == instance.getLabel()) {
 				correct++;
-				System.out.println("CLASSIFY POS");
 			}
 		}
 		computeAccuracy(correct, test.size());

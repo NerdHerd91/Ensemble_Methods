@@ -58,7 +58,6 @@ public class DecisionTree {
 			// Recursive branching over all possible values for the attribute we are splitting on.
 			for (Integer value : range.keySet()) {
 				node.getBranches().put(value, learnTree(range.get(value), featNames, new HashSet<Integer>(testAttr), thresh));
-				System.out.println("New Level");
 			}
 			return node;
 		}

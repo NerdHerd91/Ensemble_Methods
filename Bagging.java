@@ -24,17 +24,16 @@ public class Bagging {
 		for (DTreeNode tree : this.trees) {
 			if (dt.predictTree(instance, tree) == 1) {
 				positive++;
-				System.out.println("YAY");
 			}
 		}
-		return Math.max(positive, trees.size() - positive);
+		
+		return (positive >= trees.size()) ? 1 : 0;
 	}
 
 	private void buildTrees() {
 		DecisionTree dt = new DecisionTree(this.features.length);
 		for (int i = 0; i < this.samples; i++) {
 			Set<Instance> randomSet = createRandomSet();
-			System.out.println("New Tree");
 			trees.add(dt.learnTree(randomSet, this.features, new HashSet<Integer>(), this.thresh));
 		}
 	}
