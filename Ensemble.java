@@ -25,12 +25,13 @@ public class Ensemble {
 		ArrayList<Instance> test = parseData("./DataSet/test.arff.txt");
 
 		// Predict class for each instance in test data.
-		Bagging sr = new Bagging(train, featNames, samples, 1);
+		Bagging bag = new Bagging(train, featNames, samples, 1);
 	    int correct = 0;
 		for (Instance instance : test) {
-			int label = sr.classify(instance);
+			int label = bag.classify(instance);
 			if (label == instance.getLabel()) {
 				correct++;
+				System.out.println("CLASSIFY POS");
 			}
 		}
 		computeAccuracy(correct, test.size());
