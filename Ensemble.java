@@ -36,12 +36,23 @@ public class Ensemble {
 		computeAccuracy(correct, test.size());
 	}
 
+	/**
+	* Populates the feature name array with default names.
+	*
+	* @param features String array for feature names to be held.
+	*/
 	public static void populateFeatureNames(String[] features) {
 		for (int i = 0; i < FEATURES; i++) {
 			features[i] = "p-" + (i + 1);
 		}
 	}
 
+	/**
+	* Parses the aarf formatted file and returns the list of Instance objects.
+	*
+	* @param fileName String filename to where the dataset is.
+	* @return Returns an ArrayList of Instance objects.
+	*/
 	public static ArrayList<Instance> parseData(String fileName) {
 		ArrayList<Instance> instances = new ArrayList<Instance>();
 
